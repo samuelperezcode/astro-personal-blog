@@ -1,6 +1,28 @@
 ---
 import Main from "../layout/Main.astro"
+import Cards from "../components/Cards.astro";
+
 const profileImage = 'photo.png'
+const cardsInfo = [
+	{
+		title: "A summary of my work history",
+		to: "/projects",
+		gradientFrom: '#fde68a',
+		gradientTo: '#fca5a5'
+	},
+	{
+		title: "My Final University Project",
+		to: "/projects",
+		gradientFrom: '#818cf8',
+		gradientTo: '#d8b4fe'
+	},
+	{
+		title: "Where I've learnt and found usefull things",
+		to: "/resources",
+		gradientFrom: '#6ee7b7',
+		gradientTo: '#9333ea'
+	},
+]
 ---
 
   <Main title="Samuel Perez | Personal Website" >
@@ -13,6 +35,7 @@ const profileImage = 'photo.png'
 				<a class="btn" href="/about">Read More</a>
 			</div>
 		</section>
+		<Cards cards={cardsInfo} />
 	</Main>
 
 
