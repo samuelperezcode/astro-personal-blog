@@ -6,9 +6,18 @@ import ThemeToggler from "./ThemeToggler.astro";
     <li><a href="/">Home</a></li>
     <li><a href="/projects">Projects</a></li>
     <li><a href="/resources">Resources</a></li>
+    <li><a href="/about">About Me</a></li>
   </ul>
   <ThemeToggler />
 </nav>
+
+<script>
+  const {pathname} = window.location
+  const activeNavelement = document.querySelector(`nav a[href='${pathname}']`)
+  if (activeNavelement){
+    activeNavelement.classList.add("active")
+  }
+</script>
 
 <style>
   nav{
@@ -34,5 +43,9 @@ import ThemeToggler from "./ThemeToggler.astro";
   }
   a:hover{
     color: var(--grey-900);
+  }
+  a.active{
+    background: var(--grey-900);
+    color: var(--background);
   }
 </style>
