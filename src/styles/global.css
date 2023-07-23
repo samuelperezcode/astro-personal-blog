@@ -1,6 +1,23 @@
+html{
+  --background: #242424;
+  --grey-200: #eaeaea;
+  --grey-400: #acacac;
+  --grey-600: #ffffff;
+  --grey-900: #fafafa;
+
+}
+html.light{
+  --background: white;
+  --grey-200: #222;
+  --grey-400: #444;
+  --grey-600: #333;
+  --grey-900: #111;
+}
+
+
 body{
-  background-color: #242424;
-  color: #f4f4f4;
+  background-color: var(--background);
+  color: var(--grey-600);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0 0.5rem;
 }
@@ -15,7 +32,7 @@ h1 + h2 {
   font-weight: 400;
 }
 a{
-  color: #f4f4f4;
+  color: var(--grey-400);
 }
 main{
   max-width: 40rem;
