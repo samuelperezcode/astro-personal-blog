@@ -19,18 +19,20 @@ const projects = await Astro.glob('../content/projects/*.md')
   </figure>
   <h1>Projects</h1>
   <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consectetur reprehenderit magni, sunt velit unde aliquam. Vero doloremque quis neque.</h2>
-  <section class="container">
-    {projects.map(project=> {
-      return (
-        <ProjectCard 
-          title={project.frontmatter.title}
-          poster={project.frontmatter.poster}
-          tools={project.frontmatter.tools}
-          desc={project.frontmatter.subtitle}
-          slug={project.frontmatter.slug}
-        />
-      )
-    })}
+  <section class="projects">
+    <div class="container">
+      {projects.map(project=> {
+        return (
+          <ProjectCard 
+            title={project.frontmatter.title}
+            poster={project.frontmatter.poster}
+            tools={project.frontmatter.tools}
+            desc={project.frontmatter.subtitle}
+            slug={project.frontmatter.slug}
+          />
+        )
+      })}
+    </div>
   </section> 
 </Main>
 
@@ -48,10 +50,16 @@ const projects = await Astro.glob('../content/projects/*.md')
   .figure-caption{
     font-size: .9rem;
   }
+  .projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .container{
     width: 100%;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
     gap: 16px;
   }
 </style>

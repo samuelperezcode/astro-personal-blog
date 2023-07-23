@@ -26,13 +26,24 @@ const {title, desc, tools, poster, slug} = Astro.props
 
 <style>
   .project-card{
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    max-width: 200px;
-    width:200px
+    max-width: 300px;
+    padding: 0 1.2rem;
+    background-color: var(--grey-400);
+    color: var(--background);
+    border-radius: 1.5rem;
   }
   .project-card--poster{
     width: 100%;
+    margin-top: 1.2rem;
+    border-radius: 1.5rem;
+    opacity: .7;
+  }
+  .proyect-card--desc{
+    color: var(--background);
+    opacity: .8;
   }
   .proyect-card--footer{
     width: 100%;
@@ -44,6 +55,8 @@ const {title, desc, tools, poster, slug} = Astro.props
   }
   ul li{
     list-style: none;
+    color: var(--background);
+    opacity: 0.9;
   }
 
 </style>

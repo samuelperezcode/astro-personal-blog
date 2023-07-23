@@ -1,5 +1,5 @@
 ---
-poster: "/images/ecommerce.jpg"
+poster: "/images/project.jpg"
 title: "Ecommerce Django Project"
 subtitle: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat, perferendis."
 tools: ['Django', 'DRF', "Docker"]
