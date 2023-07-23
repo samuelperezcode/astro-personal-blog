@@ -12,6 +12,28 @@ import NavigationBar from '../components/NavigationBar.astro'
     <!-- meta for SEO -->
     <meta name="description" content="Second Project WebSite builded with Astro" />
 		<title>Welcome</title>
+		<!-- Script is:inline -->
+		<!-- to eradicated the flash of  incorrect theme-->
+		<script is:inline>
+			const THEME_CLASS = 'light'
+			// LocalStorage
+			const COLOR_MODE = "COLOR_MODE"
+			const DARK_THEME = "DARK"
+			const LIGHT_THEME = 'LIGHT'
+			const rootEl = document.documentElement
+			// Getting Theme from LocalStorage
+			const getInitialColourMode = () => {
+				const prevSavedColourMode = window.localStorage.getItem(COLOR_MODE)
+				return prevSavedColourMode ? prevSavedColourMode : DARK_THEME
+			}
+			const initialColorMode = getInitialColourMode()
+			const setInitialColourMode = (mode) => {
+				mode === LIGHT_THEME 
+					? rootEl.classList.add(THEME_CLASS)
+					: rootEl.classList.remove(THEME_CLASS)
+			}
+			setInitialColourMode(initialColorMode)
+		</script>
 	</head>
 	<body>
 		<main>
