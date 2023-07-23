@@ -6,6 +6,17 @@
   </svg>
 </button>
 
+<script>
+  const THEME_CLASS = 'light'
+
+  const togglerBtn = document.querySelector('button')
+  const rootEl = document.documentElement
+
+  if(togglerBtn){
+    togglerBtn.addEventListener('click', ()=> rootEl.classList.toggle(THEME_CLASS))
+  } 
+</script>
+
 <style>
   button{
     cursor: pointer;
