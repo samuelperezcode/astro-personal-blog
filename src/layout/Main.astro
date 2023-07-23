@@ -3,6 +3,12 @@ import '../styles/global.css'
 import Footer from '../components/Footer.astro'
 import NavigationBar from '../components/NavigationBar.astro'
 import DonateBtn from '../components/DonateBtn.astro';
+
+//Props
+interface Props {
+	title: string
+}
+const {title} = Astro.props as Props
 ---
 <html lang="en">
 	<head>
@@ -12,7 +18,7 @@ import DonateBtn from '../components/DonateBtn.astro';
 		<meta name="generator" content={Astro.generator} />
     <!-- meta for SEO -->
     <meta name="description" content="Second Project WebSite builded with Astro" />
-		<title>Welcome</title>
+		<title>{title}</title>
 		<!-- Script is:inline -->
 		<!-- to eradicated the flash of  incorrect theme-->
 		<script is:inline>
