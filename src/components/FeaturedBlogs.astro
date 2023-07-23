@@ -1,0 +1,56 @@
+---
+const blogs = await Astro.glob<{
+	poster: string
+	title: string
+	subtitle: string
+}>("../pages/blogs/*.md")
+---
+<section class="featured-blogs">
+  <h3 class="featured-blogs--title">Featured Blogs</h3>
+  <p class="featured-blogs--desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cum deserunt adipisci nam quis. Repellat.</p>
+</section>
+<ol class="blogs-list">
+  {blogs.map(blog=>(
+    <li class="blog-item">
+      <a class="blog-link" href={blog.url}>
+        {blog.frontmatter.title}
+      </a>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .featured-blogs{
+    margin: 0;
+    padding: 3rem 0 0 0 ;
+  }
+  .featured-blogs--title{
+    font-size: 2rem;
+    color: var(--grey-900);
+  }
+  .featured-blogs--desc{
+    margin-top: -1.2rem;
+  }
+
+  .blogs{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  .blog-item{
+    border-bottom: 1px solid;
+    border-color: var(--grey-200);
+  }
+  .blog-link{
+    opacity: 1;
+    height: 100%;
+    display: block;
+    padding: 1rem 0;
+    color: var(--grey-200);
+    text-decoration: none;
+    transition: opacity 0.2s ease-in-out
+  }
+  .blog-link:hover{
+    opacity: .7;
+  }
+
+</style>

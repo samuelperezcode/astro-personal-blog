@@ -1,6 +1,7 @@
 ---
 import Main from "../layout/Main.astro"
 import Cards from "../components/Cards.astro";
+import FeaturedBlogs from "../components/FeaturedBlogs.astro";
 
 const profileImage = 'photo.png'
 const cardsInfo = [
@@ -36,6 +37,7 @@ const cardsInfo = [
 			</div>
 		</section>
 		<Cards cards={cardsInfo} />
+		<FeaturedBlogs />
 	</Main>
 
 
