@@ -1,74 +1,39 @@
 ---
-const homeImage = '/banner.jpg'
+import Main from "../layout/Main.astro"
+const profileImage = 'photo.png'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Welcome</title>
-	</head>
-	<body>
-		<main>
-			<img src={homeImage} alt="Banner of Cienfuegos University">
-			<div class="page">
-				<div class="page-container">
-					<h1>Universidad de Cienfuegos</h1>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cupiditate, molestiae minima culpa ducimus ipsam expedita, laudantium officiis, illum atque ea aperiam quas quod qui.</p>
-					<a class="btn" href="/about">Read More</a>
-				</div>
+  <Main>
+		<section class="profile">
+			<img src={profileImage} class="profile-img" alt="Profile picture">
+			<div class="profile-details">
+				<h1>Samuel Perez</h1>
+				<h2>FullStack Developer from Cienfuegos, Cuba.</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cupiditate, molestiae minima culpa..</p>
+				<a class="btn" href="/about">Read More</a>
 			</div>
-		</main>
-	</body>
-</html>
+		</section>
+	</Main>
+
 
 <style>
-	*{
-		padding: 0;
-		margin: 0;
-	}
-	body{
-		text-align: center;
-		background-color: #242424;
-		color: #f4f4f4;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		
-	}
-	img{
-		width: 100%;
-	}
-	.page{
-		width: 100%;
+	.profile{
 		display: flex;
-		justify-content: center;
-		align-items: center;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		padding: 1rem 0 3rem 0;
+	}
+	.profile-details{
+		flex: 1 0 300px;
+	}
+	.profile-details > h1{
+		margin-top: 0;
+	}
+	.profile-img{
+		border-radius: 50%;
+		margin: 0 2rem 1rem 0;
 	}
 
-	.page-container{
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-items: center;
-		height: 250px;
-		width: 600px;
-	}
-	h1{
-		font-size: 36px;
-	}
-	p{
-		color: #e4e4e4;
-	}
-
-	.page-container .btn{
-		padding: 8px 24px;
-		background: #0b6c98;
-		color: #fff;
-		text-decoration: none;
-		font-weight: bold;
-		border-radius: 30px;
-	}
 
 </style>
 
