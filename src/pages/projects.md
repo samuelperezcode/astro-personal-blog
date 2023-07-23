@@ -1,5 +1,5 @@
 ---
-layout: ../layout/Main.astro
+layout: ../layout/Blog.astro
 ---
 
 - CienfuegosZOO
