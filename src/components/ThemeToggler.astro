@@ -8,13 +8,34 @@
 
 <script>
   const THEME_CLASS = 'light'
-
   const togglerBtn = document.querySelector('button')
   const rootEl = document.documentElement
-
+  // LocalStorage
+  const COLOR_MODE = "COLOR_MODE"
+  const DARK_THEME = "DARK"
+  const LIGHT_THEME = 'LIGHT'
+  
+  
   if(togglerBtn){
-    togglerBtn.addEventListener('click', ()=> rootEl.classList.toggle(THEME_CLASS))
+    togglerBtn.addEventListener('click', ()=>{
+      rootEl.classList.toggle(THEME_CLASS)
+      const colorMode = rootEl.classList.contains(THEME_CLASS) ? LIGHT_THEME : DARK_THEME
+      window.localStorage.setItem(COLOR_MODE, colorMode)
+    })
   } 
+
+  // Getting Theme from LocalStorage
+  const getInitialColourMode = () => {
+    const prevSavedColourMode = window.localStorage.getItem(COLOR_MODE)
+    return prevSavedColourMode ? prevSavedColourMode : DARK_THEME
+  }
+  const initialColorMode = getInitialColourMode()
+  const setInitialColourMode = (mode: string) => {
+    mode === LIGHT_THEME 
+      ? rootEl.classList.add(THEME_CLASS)
+      : rootEl.classList.remove(THEME_CLASS)
+  }
+  setInitialColourMode(initialColorMode)
 </script>
 
 <style>
