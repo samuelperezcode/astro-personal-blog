@@ -1,0 +1,57 @@
+---
+import Main from "../layout/Main.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+const projects = await Astro.glob('../content/projects/*.md')
+---
+
+<Main title="Samuel Perez | Projects">
+  <figure class="blog-figure">
+    <img 
+      src='/images/projects.png' 
+      alt="picture of laptop on a table"
+      width="100%"
+      height="340px"
+      class="figure-img"
+    />
+    <figcaption class="figure-caption">
+      Poster image for projects
+    </figcaption>
+  </figure>
+  <h1>Projects</h1>
+  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore consectetur reprehenderit magni, sunt velit unde aliquam. Vero doloremque quis neque.</h2>
+  <section class="container">
+    {projects.map(project=> {
+      return (
+        <ProjectCard 
+          title={project.frontmatter.title}
+          poster={project.frontmatter.poster}
+          tools={project.frontmatter.tools}
+          desc={project.frontmatter.subtitle}
+          slug={project.frontmatter.slug}
+        />
+      )
+    })}
+  </section> 
+</Main>
+
+<style>
+  h1 + h2{
+    margin-bottom: 3rem;
+  }
+  .blog-figure{
+    margin: 0;
+  }
+  .figure-img{
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  .figure-caption{
+    font-size: .9rem;
+  }
+  .container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    gap: 16px;
+  }
+</style>

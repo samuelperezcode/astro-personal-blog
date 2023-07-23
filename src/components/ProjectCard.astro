@@ -1,0 +1,49 @@
+---
+type Props = {
+  title: string
+  desc: string
+  tools: []
+  poster: string
+  slug: string
+}
+const {title, desc, tools, poster, slug} = Astro.props
+---
+
+<a href={`/${slug}`} class="project-card">
+  <img class="project-card--poster" src={poster} alt={title.toLowerCase()}>
+  <div class="text-container">
+    <h3 class="proyect-card--title">{title}</h3>
+    <p class="proyect-card--desc">{desc}</p>
+  </div>
+  <footer class="proyect-card--footer">
+    <ul>
+      {tools.map(tool=>{
+        return <li>{tool}</li>
+      })}
+    </ul>
+  </footer>
+</a>
+
+<style>
+  .project-card{
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    width:200px
+  }
+  .project-card--poster{
+    width: 100%;
+  }
+  .proyect-card--footer{
+    width: 100%;
+  }
+  .proyect-card--footer ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  ul li{
+    list-style: none;
+  }
+
+</style>

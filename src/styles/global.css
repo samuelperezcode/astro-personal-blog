@@ -33,6 +33,7 @@ h1 + h2 {
 }
 a{
   color: var(--grey-400);
+  text-decoration: none;
 }
 main{
   max-width: 40rem;

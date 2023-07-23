@@ -1,0 +1,27 @@
+---
+import Main from "../layout/Main.astro";
+
+export async function getStaticPaths() {
+  const projects = await Astro.glob('../content/projects/*.md')
+  return projects.map(project =>( {
+    params:{
+      slug: project.frontmatter.slug 
+    },
+    props: {
+      project
+    }
+  }))
+}
+
+const {Content, frontmatter} = Astro.props.project
+---
+
+<Main title={`Project | ${frontmatter.title}`} >
+  <figure>
+    <img src={frontmatter.poster} alt={frontmatter.title.toLowerCase()}>
+    <figcaption>{`Project image for ${frontmatter.title.toLowerCase()}`}</figcaption>
+  </figure>
+  <h2>{frontmatter.title}</h2>
+  <h4>{frontmatter.subtitle}</h4>
+  <Content />
+</Main>
