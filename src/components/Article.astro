@@ -1,0 +1,12 @@
+---
+type Props = {
+  title: string
+}
+const {title} = Astro.props
+---
+<article class="article">
+  <h3 class="article-title">{title}</h3>
+  <div class="article-content">
+    <slot />
+  </div>
+</article>

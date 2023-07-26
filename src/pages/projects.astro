@@ -29,6 +29,7 @@ const projects = await Astro.glob('../content/projects/*.md')
             tools={project.frontmatter.tools}
             desc={project.frontmatter.subtitle}
             slug={project.frontmatter.slug}
+            colorPrimary={project.frontmatter.colorPrimary}
           />
         )
       })}

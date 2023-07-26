@@ -5,8 +5,9 @@ type Props = {
   tools: []
   poster: string
   slug: string
+  colorPrimary: string
 }
-const {title, desc, tools, poster, slug} = Astro.props
+const {title, desc, tools, poster, slug, colorPrimary} = Astro.props
 ---
 
 <a href={`/${slug}`} class="project-card">
@@ -24,16 +25,23 @@ const {title, desc, tools, poster, slug} = Astro.props
   </footer>
 </a>
 
-<style>
+<style define:vars={{colorPrimary}}>
   .project-card{
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     max-width: 300px;
     padding: 0 1.2rem;
-    background-color: var(--grey-400);
-    color: var(--background);
+    background-color: var(--background);
+    color: var(--grey-200);
     border-radius: 1.5rem;
+    border: 3px solid;
+    border-color: var(--colorPrimary);
+    transition: all .3s ease-in-out;
+  }
+  .project-card:hover{
+    transform: scale(.95);
+    background-color: var(--background-less);
   }
   .project-card--poster{
     width: 100%;
@@ -42,7 +50,7 @@ const {title, desc, tools, poster, slug} = Astro.props
     opacity: .7;
   }
   .proyect-card--desc{
-    color: var(--background);
+    color: var(--grey-600);
     opacity: .8;
   }
   .proyect-card--footer{
@@ -55,7 +63,7 @@ const {title, desc, tools, poster, slug} = Astro.props
   }
   ul li{
     list-style: none;
-    color: var(--background);
+    color: var(--grey-900);
     opacity: 0.9;
   }
 

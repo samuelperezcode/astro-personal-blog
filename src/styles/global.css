@@ -1,5 +1,6 @@
 html{
   --background: #242424;
+  --background-less: #333;
   --grey-200: #eaeaea;
   --grey-400: #acacac;
   --grey-600: #ffffff;
@@ -7,7 +8,8 @@ html{
 
 }
 html.light{
-  --background: white;
+  --background: #f4f4f4;
+  --background-less: #fff;
   --grey-200: #222;
   --grey-400: #444;
   --grey-600: #333;
