@@ -1,0 +1,31 @@
+---
+type Props = {
+  name: string
+  color: string
+  logo: string
+}
+const {name, logo, color} = Astro.props
+---
+<a href="#" class="skill-container">
+  <img src={logo} alt=`logo of ${name.toLowerCase()}`>
+  <span>{name}</span>
+</a>
+
+<style define:vars={{color}}>
+  .skill-container{
+    background-color: var(--color);
+    width: 120px;
+    height: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-container img{
+    width: 32px;
+  }
+  .skill-container span{
+    color: #fff;
+    font-weight: bold;
+  }
+</style>

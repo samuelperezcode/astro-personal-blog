@@ -1,11 +1,37 @@
 ---
 import Main from "../layout/Main.astro";
+import Article from "../components/Article.astro";
+import SkillTag from "../components/SkillTag.astro";
+import data from '../utils/skills.json'
 ---
 <Main title="Samuel Perez | About me">
 	<section class="about-content">
 		<h1 class="about-title">About me</h1>
-		
+		<h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit pariatur error est iure, dolores aliquam explicabo, omnis sint ex voluptates aperiam libero, magnam optio. Omnis sint ex voluptates aperiam libero, magnam optio.</h2>
+		<Article title="Skills and Tools">
+			<div class="skills-container" >
+				{
+					data.skills.map(skill=> {
+						return <SkillTag name={skill.title} color={skill.color} logo={skill.logo}  />
+					})
+				}
+			</div>
+		</Article>
+		<Article title="Studies">
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora aperiam totam doloribus dolorum, voluptas nemo, incidunt est porro, non praesentium dolor architecto ea! Quidem expedita sapiente sit saepe ut reiciendis necessitatibus voluptate numquam delectus quae deserunt beatae quisquam commodi, accusantium inventore tempore nihil maiores cum in explicabo nisi eveniet. Repudiandae.</p>
+		</Article>
+		<Article title="Works">
+			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui enim perferendis, distinctio provident dignissimos quos facere est cumque praesentium. Odio iure sint, dicta nostrum voluptas, quasi laborum delectus corrupti ipsam praesentium nobis suscipit enim similique nesciunt? Illo, cum, saepe aliquam reiciendis amet ipsam optio alias, ipsa culpa obcaecati aut ad!</p>
+		</Article>
 
 
 	</section>
 </Main>
+
+<style>
+	.skills-container{
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax(110px, 5fr));
+		gap: 16px;
+	}
+</style>

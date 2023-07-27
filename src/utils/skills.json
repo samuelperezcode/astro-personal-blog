@@ -1,0 +1,40 @@
+{
+  "skills":[
+    {
+      "title":"React",
+      "color": "#9cb",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    },
+    {
+      "title":"Vite",
+      "color": "#1aa999",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    },
+    {
+      "title":"Astro",
+      "color": "#d39999",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    },
+    {
+      "title":"Django",
+      "color": "green",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    },
+    {
+      "title":"Python",
+      "color": "yellow",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    },
+    {
+      "title":"C#",
+      "color": "purple",
+      "logo": "/logos/favicon.svg",
+      "link": "www.astrobuild.com"
+    }
+  ]
+}
