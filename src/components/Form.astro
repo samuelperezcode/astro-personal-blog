@@ -1,0 +1,42 @@
+---
+import Field from "./Field.astro";
+import TextAreaField from "./TextAreaField.astro"
+---
+<form action="" method="post">
+  <div class="fields-container">
+    <Field name="Username" type="text" />
+    <Field name="Email" type="email" />
+    <TextAreaField name="Content" />
+  </div>
+  <button class="btn-submit" type="submit" >Send ✔</button>
+</form>
+
+<style>
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .fields-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .btn-submit{
+    margin-top: 32px;
+    padding: 1rem 2rem;
+    color: #fff;
+    background-color: #14a014;
+    border: 0;
+    font-weight: 900;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+  }
+  .btn-submit:hover{
+    transform: scale(1.1);
+    background-color: #0e740e;
+  }
+</style>
+

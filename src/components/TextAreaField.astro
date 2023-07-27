@@ -1,0 +1,33 @@
+---
+type Props = {
+  name: string
+
+}
+const {name} = Astro.props
+---
+
+
+<div class="field">
+  <label for={name.toLowerCase()}>{name}</label>
+  <textarea name={name.toLowerCase()} id={name.toLowerCase()} cols="30" rows="5"></textarea>
+</div>
+
+<style>
+  .field{
+  display: flex;
+  flex-direction: column;
+  }
+  .field label{
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  textarea{
+    padding: 1rem 4rem;
+    background-color: transparent;
+    color: var(--grey-200);
+    border: 2px solid;
+    border-color: var(--grey-600);
+    border-radius: 1rem;
+    font-size: 16px;
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+type Props = {
+  name: string
+  type: any
+}
+const {name, type} = Astro.props
+---
+
+
+<div class="field">
+  <label for={name.toLowerCase()}>{name}</label>
+  <input type={type} name={name.toLowerCase()} id={name.toLowerCase()}>
+</div>
+
+<style>
+  .field{
+  display: flex;
+  flex-direction: column;
+  }
+  .field label{
+    font-weight: 500;
+    margin-bottom: 8px;  
+  }
+  .field input{
+    padding: 1rem 4rem;
+    background-color: transparent;
+    color: var(--grey-200);
+    border: 2px solid;
+    border-color: var(--grey-600);
+    border-radius: 1rem;
+    font-size: 16px;
+  }
+</style>
